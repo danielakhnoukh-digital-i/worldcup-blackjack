@@ -1,0 +1,46 @@
+name: Refresh results
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 min; GitHub may add a few minutes of lag
+  workflow_dispatch: {}       # manual "refresh now" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-results
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch feed
+        run: curl -sSf --max-time 30 "https://fixturedownload.com/feed/json/fifa-world-cup-2026" -o /tmp/feed.json
+
+      - name: Validate feed (never commit an error page)
+        run: |
+          python3 - <<'EOF'
+          import json
+          data = json.load(open('/tmp/feed.json'))
+          assert isinstance(data, list), f"feed is not a list: {type(data)}"
+          assert len(data) >= 100, f"feed too short: {len(data)} matches"
+          ids = {m.get('MatchNumber') for m in data}
+          assert 1 in ids and 104 in ids, "match numbers 1/104 missing"
+          EOF
+
+      - name: Commit if changed
+        run: |
+          cp /tmp/feed.json data/results.json
+          if git diff --quiet -- data/results.json; then
+            echo "No new results."
+          else
+            git config user.name "results-bot"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/results.json
+            git commit -m "Update results $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
