@@ -11,7 +11,11 @@ window.WCB = window.WCB || {}; WCB.data = WCB.data || {};
 
 WCB.data.playersArePlaceholders = true;
 WCB.data.players = [
-  { name: "Example Anna", teams: ["BRA", "BEL", "JPN", "RSA"] },
-  { name: "Example Ben",  teams: ["FRA", "USA", "EGY", "PAN"] },
-  { name: "Example Cara", teams: ["ESP", "MAR", "KOR", "SCO"] },
+  { name: "Dan A", teams: ["ENG", "CRO", "GHA", "PAN"] },
+  { name: "Alex S",  teams: ["FRA", "USA", "EGY", "PAN"] },
+  { name: "Dan H", teams: ["ESP", "MAR", "KOR", "SCO"] },
+  { name: "Euan", teams: ["ESP", "MAR", "KOR", "SCO"] },
+  { name: "Dani", teams: ["ESP", "MAR", "KOR", "SCO"] },
+  { name: "Tom", teams: ["ESP", "MAR", "KOR", "SCO"] },
+  { name: "Sam V", teams: ["ESP", "MAR", "KOR", "SCO"] },
 ];
