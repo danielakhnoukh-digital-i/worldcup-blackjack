@@ -1,4 +1,15 @@
 /* World Cup Blackjack '26 — mobile-first, dark navy + gold, card motif. */
+
+/* Windows has no native flag emoji (shows letter pairs); this font supplies
+   them. unicode-range limits it to flag codepoints, so all other text and
+   emoji still use the system fonts. Font: Twemoji (CC-BY 4.0). */
+@font-face {
+  font-family: "Twemoji Country Flags";
+  src: url("../fonts/TwemojiCountryFlags.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0060-E007F;
+}
+
 :root {
   --bg: #0b1220;
   --bg2: #101a2e;
@@ -19,7 +30,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 16px/1.45 "Twemoji Country Flags", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   padding-bottom: calc(var(--tabs-h) + env(safe-area-inset-bottom, 0px));
 }
 
