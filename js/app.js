@@ -1,6 +1,6 @@
 // Boot, routing, refresh loop. Wires store -> derive -> ui.
 (function () {
-  var viewState = { expanded: {}, sortTeamsByGoals: false, pickedOnly: false, scrolledOnce: false };
+  var viewState = { expanded: {}, sortTeamsByGoals: true, pickedOnly: false, scrolledOnce: false };
 
   function players() {
     return WCB.config.mock ? WCB.data.mockPlayers : WCB.data.players;
