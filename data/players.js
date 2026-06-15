@@ -9,13 +9,19 @@
 // to remove the warning banner on the site.
 window.WCB = window.WCB || {}; WCB.data = WCB.data || {};
 
-WCB.data.playersArePlaceholders = true;
+WCB.data.playersArePlaceholders = false;
 WCB.data.players = [
+  { name: "Alex S", teams: ["ENG", "SCO", "PAN", "IRN"] },
+  { name: "Sam V", teams: ["IRN", "GHA", "BRA", "JPN"] },
+  { name: "Euan", teams: ["SCO", "CIV", "NOR", "AUS"] },
+  { name: "Alex T", teams: ["MEX", "JPN", "CRO", "NOR"] },
+  { name: "Vic", teams: ["USA", "MEX", "KOR", "AUT"] },
   { name: "Dan A", teams: ["ENG", "CRO", "GHA", "PAN"] },
-  { name: "Alex S",  teams: ["FRA", "USA", "EGY", "PAN"] },
-  { name: "Dan H", teams: ["ESP", "MAR", "KOR", "SCO"] },
-  { name: "Euan", teams: ["ESP", "MAR", "KOR", "SCO"] },
-  { name: "Dani", teams: ["ESP", "MAR", "KOR", "SCO"] },
-  { name: "Tom", teams: ["ESP", "MAR", "KOR", "SCO"] },
-  { name: "Sam V", teams: ["ESP", "MAR", "KOR", "SCO"] },
+  { name: "Tom B", teams: ["ESP", "HAI", "UZB", "IRN"] },
+  { name: "Fabel", teams: ["MAR", "URU", "ECU", "AUS"] },
+  { name: "Sajeel", teams: ["KSA", "IRN", "SUI", "URU"] },
+  { name: "Jun", teams: ["SUI", "URU", "ECU", "GHA"] },
+  { name: "Dani", teams: ["MEX", "SUI", "SEN", "NOR"] },
+  { name: "Dan H", teams: ["JPN", "IRN", "PAN", "SCO"] },
+  { name: "Matt", teams: ["SEN", "NZL", "ECU", "MEX"] }
 ];
