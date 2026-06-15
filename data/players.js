@@ -18,7 +18,7 @@ WCB.data.players = [
   { name: "Vic", teams: ["USA", "MEX", "KOR", "AUT"] },
   { name: "Dan A", teams: ["ENG", "CRO", "GHA", "PAN"] },
   { name: "Tom B", teams: ["ESP", "HAI", "UZB", "IRN"] },
-  { name: "Fabel", teams: ["MAR", "URU", "ECU", "AUS"] },
+  { name: "Fable", teams: ["MAR", "URU", "ECU", "AUS"] },
   { name: "Sajeel", teams: ["KSA", "IRN", "SUI", "URU"] },
   { name: "Jun", teams: ["SUI", "URU", "ECU", "GHA"] },
   { name: "Dani", teams: ["MEX", "SUI", "SEN", "NOR"] },
